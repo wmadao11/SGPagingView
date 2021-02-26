@@ -76,5 +76,14 @@
     return cell;
 }
 
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath  API_AVAILABLE(ios(11.0)){
+    UIContextualAction *action = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"test" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL))
+                                  {
+                                      NSLog(@"------------------>%@",sourceView);
+                                      completionHandler (YES);
+                                  }];
+    return [UISwipeActionsConfiguration configurationWithActions:@[action]];
+}
+
 
 @end

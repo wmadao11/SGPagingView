@@ -8,6 +8,7 @@
 
 #import "SGPageContentScrollView.h"
 #import "UIView+SGPagingView.h"
+#import "SGScrollView.h"
 
 @interface SGPageContentScrollView () <UIScrollViewDelegate>
 // 外界父控制器
@@ -15,7 +16,7 @@
 /// 存储子控制器
 @property (nonatomic, strong) NSArray *childViewControllers;
 /// scrollView
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) SGScrollView *scrollView;
 /// 记录刚开始时的偏移量
 @property (nonatomic, assign) NSInteger startOffsetX;
 /// 记录加载的上个子控制器
@@ -77,7 +78,7 @@
 
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] init];
+        _scrollView = [[SGScrollView alloc] init];
         _scrollView.bounces = NO;
         _scrollView.delegate = self;
         _scrollView.pagingEnabled = YES;

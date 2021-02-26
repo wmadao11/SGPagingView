@@ -8,6 +8,7 @@
 
 #import "SGPageContentCollectionView.h"
 #import "UIView+SGPagingView.h"
+#import "SGCollectionView.h"
 
 @interface SGPageContentCollectionView () <UICollectionViewDataSource, UICollectionViewDelegate>
 /// 外界父控制器
@@ -17,7 +18,7 @@
 /// flowLayout
 @property (nonatomic, weak) UICollectionViewFlowLayout *flowLayout;
 /// collectionView
-@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) SGCollectionView *collectionView;
 /// 记录刚开始时的偏移量
 @property (nonatomic, assign) NSInteger startOffsetX;
 /// 记录加载的上个子控制器的下标
@@ -84,7 +85,7 @@ static NSString *const cellID = @"cellID";
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _flowLayout = flowLayout;
         
-        _collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
+        _collectionView = [[SGCollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.pagingEnabled = YES;

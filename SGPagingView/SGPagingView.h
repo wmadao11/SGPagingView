@@ -7,6 +7,8 @@
 //  Copyright © 2016年 kingsic. All rights reserved.
 //
 
+#import "SGCollectionView.h"
+#import "SGScrollView.h"
 #import "SGPageTitleViewConfigure.h"
 #import "SGPageTitleView.h"
 #import "SGPageContentScrollView.h"
